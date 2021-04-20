@@ -65,6 +65,7 @@ const LoginLayout = () => {
                   </TouchableOpacity>
                 }
                 iconPosition="right"
+                onPress={() => this.props.navigation.navigate('Home')}
                 // onChangeText={(value)} => {}
                 //ref={txtPasswordRef}
               />

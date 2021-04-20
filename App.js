@@ -19,6 +19,7 @@ import {
   View,
 } from 'react-native';
 import LoginLayout from './src/screen/login';
+import HomeLayout from './src/screen/home';
 import {
   Colors,
   DebugInstructions,
@@ -26,20 +27,24 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {createStackNavigator} from 'react-navigation';
+// const App = () => {
+//   return (
+//     <View style={styles.root}>
+//       <StatusBar barStyle="dark-content" />
+//       <LoginLayout />
+//     </View>
+//   );
+// };
 
-const App = () => {
-  return (
-    <View style={styles.root}>
-      <StatusBar barStyle="dark-content" />
-      <LoginLayout />
-    </View>
-  );
-};
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
+// const styles = StyleSheet.create({
+//   root: {
+//     flex: 1,
+//   },
+// });
+const AppNavigator = createStackNavigator({
+  Login: {screen: LoginLayout},
+  Home: {screen: HomeLayout},
 });
 
-export default App;
+export default AppNavigator;
