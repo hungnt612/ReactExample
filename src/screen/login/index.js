@@ -16,24 +16,20 @@ import {
   form,
 } from 'react-native';
 import PasswordInputText from 'react-native-hide-show-password-input';
+import styles from './styles';
 
 const LoginLayout = () => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
   //const txtPasswordRef = useRef(null)
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : null}
-      style={{flex: 1}}>
-      <SafeAreaView style={styles.container}>
-        {/* <KeyboardAvoidingView
+    // <KeyboardAvoidingView
+    //   behavior={Platform.OS === 'ios' ? 'padding' : null}
+    //   style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
         style={styles.container}
-        behavior={'padding'}
-        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}
-      /> */}
-        {/* <KeyboardAvoidingView
-        style={styles.container}
-        behavior={'padding'}
-        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}> */}
+        behavior={'height'}
+        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}>
         <TouchableWithoutFeedback
           style={styles.container}
           onPress={Keyboard.dismiss}>
@@ -84,88 +80,9 @@ const LoginLayout = () => {
             </View>
           </View>
         </TouchableWithoutFeedback>
-      </SafeAreaView>
-    </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-  },
-  logoContainer: {
-    //backgroundColor: 'brown',
-    height: 130,
-    justifyContent: 'center',
-    marginHorizontal: 30,
-  },
-  logo: {
-    color: 'red',
-    fontSize: 25,
-    fontWeight: '800',
-    alignSelf: 'center',
-  },
-  inforContainer: {
-    //backgroundColor:'red',
-    marginHorizontal: 30,
-    //backgroundColor: 'green',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 200,
-  },
-  txtTitle: {
-    fontSize: 20,
-    fontWeight: '700',
-    marginBottom: 40,
-  },
-  txtEmail: {},
-  txtPassword: {},
-  txtInput: {
-    marginVertical: 10,
-  },
-  divider: {
-    height: 1,
-    backgroundColor: 'gray',
-    marginBottom: 20,
-  },
-  btnContainer: {
-    //backgroundColor: 'blue',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 200,
-  },
-  btnSignIn: {
-    height: 48,
-    backgroundColor: 'red',
-    borderRadius: 8,
-    marginHorizontal: 20,
-    marginVertical: 10,
-  },
-  btnTextSignIn: {
-    alignSelf: 'center',
-    marginVertical: 12,
-    color: 'white',
-    fontSize: 18,
-    fontWeight: '700',
-  },
-  btnContainer2: {
-    //backgroundColor: 'yellow',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    height: 200,
-  },
-  btnTextSignUp: {
-    marginHorizontal: 20,
-    color: 'red',
-    fontSize: 20,
-    fontWeight: '600',
-    alignSelf: 'flex-end',
-    marginTop: 160,
-  },
-});
 
 export default LoginLayout;
