@@ -14,25 +14,19 @@ import {
 const LoginLayout = () => {
   //const txtPasswordRef = useRef(null)
   return (
-    <SafeAreaView style={styles.container}>
-      {/* <KeyboardAvoidingView
-        style={styles.container}
-        behavior={'padding'}
-        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}
-      /> */}
+    <SafeAreaView style={styles.root}>
       <KeyboardAvoidingView
         style={styles.container}
         behavior={'padding'}
         keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}>
-        <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Text style={styles.logo}>Scopic</Text>
-          </View>
+          
+        <View style={styles.root}>
           <View style={styles.inforContainer}>
-            <Text style={styles.txtTitle}>Sign In</Text>
-            <Text style={styles.txtEmail}>Email</Text>
+            <Text style={styles.logo}>Scopic</Text>
+            <Text style={styles.title}>Sign In</Text>
+            <Text style={styles.textEmail}>Email</Text>
             <TextInput
-              style={styles.txtInput}
+              style={styles.textInput}
               placeholder="Enter your email here"
               keyboardType="email-address"
               returnKeyType="next"
@@ -40,9 +34,9 @@ const LoginLayout = () => {
               //onSubmitEditing={() => this.refs.txtPasswordRef.focus()}
             />
             <View style={styles.divider} />
-            <Text style={styles.txtPassword}>Password</Text>
+            <Text style={styles.textPass}>Password</Text>
             <TextInput
-              style={styles.txtInput}
+              style={styles.textInput}
               placeholder="Enter your password here"
               returnKeyType="go"
               secureTextEntry={true}
@@ -50,11 +44,13 @@ const LoginLayout = () => {
               //ref={txtPasswordRef}
             />
             <View style={styles.divider} />
-            <View style={styles.btnContainer}>
-              <TouchableOpacity style={styles.btnSignIn}>
-                <Text style={styles.btnTextSignIn}>Sign In</Text>
-              </TouchableOpacity>
-            </View>
+          </View>
+          <View style={styles.btnContainer}>
+            <TouchableOpacity style={styles.btnSignIn}>
+              <Text style={styles.btnTextSignIn}>Sign In</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.btnContainer2}>
             <Text style={styles.btnTextSignUp}>Sign Up</Text>
           </View>
         </View>
@@ -64,65 +60,76 @@ const LoginLayout = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  root: {
+    flex:1,
+    //flexDirection: 'column',
   },
-  logoContainer: {
-    //backgroundColor: 'brown',
-    height: 130,
-    justifyContent: 'center',
-    marginHorizontal: 30,
-  },
-  logo: {
-    color: 'red',
-    fontSize: 25,
-    fontWeight: '800',
-    alignSelf: 'center',
+  container:{
+    flex:1,
   },
   inforContainer: {
-    //backgroundColor:'red',
-    marginHorizontal: 30,
-    //backgroundColor: 'green',
+    backgroundColor: 'blue',
   },
-  txtTitle: {
+  btnContainer: {
+    flex: 1,
+    backgroundColor: 'green',
+    paddingVertical: 40,
+  },
+  btnContainer2: {
+    flex:1,
+    backgroundColor: 'black',
+  },
+  logo: {
+    color: 'gray',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    fontSize: 25,
+    fontWeight: '700',
+    marginTop: 100,
+  },
+  title: {
+    color: 'black',
     fontSize: 20,
     fontWeight: '700',
-    marginBottom: 40,
+    marginTop: 40,
+    marginLeft: 30,
   },
-  txtEmail: {},
-  txtPassword: {},
-  txtInput: {
-    marginVertical: 10,
+  textEmail: {
+    marginHorizontal: 30,
+    marginTop: 40,
+  },
+  textPass: {
+    marginHorizontal: 30,
+    marginTop: 25,
   },
   divider: {
     height: 1,
     backgroundColor: 'gray',
-    marginBottom: 20,
+    marginHorizontal: 30,
   },
-  btnContainer: {
-    //backgroundColor: 'blue',
+  textInput: {
+    height: 40,
+    marginHorizontal: 30,
   },
   btnSignIn: {
     height: 48,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: 'red',
     borderRadius: 8,
-    marginHorizontal: 20,
-    marginVertical: 10,
+    marginHorizontal: 40,
   },
   btnTextSignIn: {
-    alignSelf: 'center',
-    marginVertical: 12,
     color: 'white',
     fontSize: 18,
     fontWeight: '700',
   },
   btnTextSignUp: {
-    marginHorizontal: 20,
+    alignSelf: 'flex-end',
+    paddingHorizontal: 50,
     color: 'red',
     fontSize: 20,
     fontWeight: '600',
-    marginTop: 300,
-    alignSelf: 'flex-end',
   },
 });
 
