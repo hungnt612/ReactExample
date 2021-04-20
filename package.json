@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "17.0.1",
     "react-native": "0.64.0",
+    "react-native-hide-show-password-input": "^1.2.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.3"
   },
   "devDependencies": {
