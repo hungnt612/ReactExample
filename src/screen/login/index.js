@@ -21,16 +21,19 @@ const LoginLayout = () => {
   const [isSecureEntry, setIsSecureEntry] = useState(true);
   //const txtPasswordRef = useRef(null)
   return (
-    <SafeAreaView style={styles.container}>
-      {/* <KeyboardAvoidingView
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      style={{flex: 1}}>
+      <SafeAreaView style={styles.container}>
+        {/* <KeyboardAvoidingView
         style={styles.container}
         behavior={'padding'}
         keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}
       /> */}
-      <KeyboardAvoidingView
+        {/* <KeyboardAvoidingView
         style={styles.container}
         behavior={'padding'}
-        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}>
+        keyboardVerticalOffset={Platform.OS === 'android' ? -500 : 100}> */}
         <TouchableWithoutFeedback
           style={styles.container}
           onPress={Keyboard.dismiss}>
@@ -81,8 +84,8 @@ const LoginLayout = () => {
             </View>
           </View>
         </TouchableWithoutFeedback>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
